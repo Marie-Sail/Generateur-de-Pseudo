@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import Patatas from "../Patatas/Patatas";
 import "./Generator.scss";
 
 function Generator({ subjects, adjectives }) {
@@ -29,33 +30,53 @@ function Generator({ subjects, adjectives }) {
 
   return (
     <article className="generator">
-      <section className="g__pseudo">
-        <h1 className="g__title">Génère ton pseudo:</h1>
-        {newPseudo && (
-          <>
-            <p className="g__pseudo__new">{newPseudo}</p>
-            <button
-              className="g__pseudo__add"
-              type="button"
-              onClick={() => addList(newPseudo)}
-            >
-              liste
-            </button>
-          </>
-        )}
-        <button
-          className="g__pseudo__alea"
-          type="button"
-          onClick={randomPseudo}
-        >
-          alea
-        </button>
+      <section className="g__pseu">
+        <h1 className="g__title">Génère ton pseudo :</h1>
+        <div className="g__pseudo">
+          {newPseudo && (
+            <>
+              <p className="g__pseudo__new">{newPseudo}</p>
+              <button
+                className="g__pseudo__add"
+                type="button"
+                onClick={() => addList(newPseudo)}
+              >
+                <img
+                  className="g__pseudo__add__img"
+                  src={`${
+                    import.meta.env.VITE_BACKEND_URL
+                  }/assets/images/addListe.svg`}
+                  alt="ajoute à la liste"
+                />
+              </button>
+            </>
+          )}
+          <button
+            className="g__pseudo__alea"
+            type="button"
+            onClick={randomPseudo}
+          >
+            <img
+              className="g__pseudo__alea__img"
+              src={`${import.meta.env.VITE_BACKEND_URL}/assets/images/alea.svg`}
+              alt="générer un pseudo"
+            />
+          </button>
+        </div>
       </section>
+      <Patatas className="patatasss" />
       <ul className="g__list">
         {list &&
           list.map((newPs) => (
             <li className="g__list__element" key={newPs.id}>
-              {newPs.name}{" "}
+              <img
+                className="g__list__element__point"
+                src={`${
+                  import.meta.env.VITE_BACKEND_URL
+                }/assets/images/point.svg`}
+                alt="point"
+              />{" "}
+              <p className="g__list__element__para">{newPs.name}</p>{" "}
               <button
                 className="g__list__element__delet"
                 type="button"
@@ -63,7 +84,13 @@ function Generator({ subjects, adjectives }) {
                   setList(list.filter((badPs) => badPs.id !== newPs.id));
                 }}
               >
-                X
+                <img
+                  className="g__list__element__delet__img"
+                  src={`${
+                    import.meta.env.VITE_BACKEND_URL
+                  }/assets/images/delet.svg`}
+                  alt="supprimé de la liste"
+                />
               </button>
             </li>
           ))}
