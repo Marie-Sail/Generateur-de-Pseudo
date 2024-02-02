@@ -1,7 +1,6 @@
 ## Concept
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
+In need of inspiration for your next nickname? Randomly generate nicknames and make a favorite voting list! You can also add nouns and adjectives to the database to increase your choices.
 
 ## Setup & Use
 
