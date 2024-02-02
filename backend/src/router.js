@@ -7,16 +7,22 @@ const router = express.Router();
 /* ************************************************************************* */
 
 // Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
+// const itemControllers = require("./controllers/itemControllers");
+const wordControllers = require("./controllers/wordControllers");
 
 // Route to get a list of items
-router.get("/items", itemControllers.browse);
+// router.get("/items", itemControllers.browse);
+router.get("/word", wordControllers.browse);
+router.get("/word/subject", wordControllers.readSub);
+router.get("/word/adjective", wordControllers.readAdj);
+
+router.post("/add/word", wordControllers.add);
 
 // Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
+// router.get("/items/:id", itemControllers.read);
 
-// Route to add a new item
-router.post("/items", itemControllers.add);
+// // Route to add a new item
+// router.post("/items", itemControllers.add);
 
 /* ************************************************************************* */
 
