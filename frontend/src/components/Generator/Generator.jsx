@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Patatas from "../Patatas/Patatas";
 import "./Generator.scss";
@@ -65,36 +66,49 @@ function Generator({ subjects, adjectives }) {
         </div>
       </section>
       <Patatas className="patatasss" />
-      <ul className="g__list">
-        {list &&
-          list.map((newPs) => (
-            <li className="g__list__element" key={newPs.id}>
-              <img
-                className="g__list__element__point"
-                src={`${
-                  import.meta.env.VITE_BACKEND_URL
-                }/assets/images/point.svg`}
-                alt="point"
-              />{" "}
-              <p className="g__list__element__para">{newPs.name}</p>{" "}
-              <button
-                className="g__list__element__delet"
-                type="button"
-                onClick={() => {
-                  setList(list.filter((badPs) => badPs.id !== newPs.id));
-                }}
-              >
+      {list.length !== 0 ? (
+        <>
+          <ul className="g__list">
+            {list.map((newPs) => (
+              <li className="g__list__element" key={newPs.id}>
                 <img
-                  className="g__list__element__delet__img"
+                  className="g__list__element__point"
                   src={`${
                     import.meta.env.VITE_BACKEND_URL
-                  }/assets/images/delet.svg`}
-                  alt="supprimé de la liste"
-                />
-              </button>
-            </li>
-          ))}
-      </ul>
+                  }/assets/images/point.svg`}
+                  alt="point"
+                />{" "}
+                <p className="g__list__element__para">{newPs.name}</p>{" "}
+                <button
+                  className="g__list__element__delet"
+                  type="button"
+                  onClick={() => {
+                    setList(list.filter((badPs) => badPs.id !== newPs.id));
+                  }}
+                >
+                  <img
+                    className="g__list__element__delet__img"
+                    src={`${
+                      import.meta.env.VITE_BACKEND_URL
+                    }/assets/images/delet.svg`}
+                    alt="supprimé de la liste"
+                  />
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <Link className="g__link" to="/add">
+            <img
+              className=""
+              src={`${import.meta.env.VITE_BACKEND_URL}/assets/images/plus.svg`}
+              alt="supprimé de la liste"
+            />
+          </Link>
+        </>
+      ) : (
+        ""
+      )}
     </article>
   );
 }

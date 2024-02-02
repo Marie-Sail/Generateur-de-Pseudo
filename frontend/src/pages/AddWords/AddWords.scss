@@ -1,0 +1,52 @@
+.addw {
+  margin: 15% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f3ede7;
+    border: 1.5px solid #545454;
+    padding: 1em;
+    border-radius: 50px;
+    .form__lb {
+      display: flex;
+      flex-direction: column;
+      .form__lb__text {
+        margin-top: 0.2em;
+        resize: none;
+        border-radius: 10px;
+        border: 1px solid #545454;
+        background-color: #ffffff;
+      }
+    }
+    .form__select {
+      height: 40%;
+      border-radius: 10px;
+      border: 1px solid #545454;
+      background-color: #ffffff;
+      margin: 1.8em 0;
+    }
+    .form__sub {
+      margin: 1.8em 0;
+      height: 40%;
+      border-radius: 10px;
+      border: 1px solid #545454;
+      background-color: #ffffff;
+    }
+  }
+
+  .img {
+    rotate: 90deg;
+    transform: scaleX(-1);
+    margin: 0 2em;
+  }
+
+  .img:active {
+    transform: scaleX(-1);
+    width: 1.5em;
+  }
+}

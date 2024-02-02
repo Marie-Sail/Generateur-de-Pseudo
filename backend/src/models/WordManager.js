@@ -9,16 +9,14 @@ class WordManager extends AbstractManager {
 
   // The C of CRUD - Create operation
 
-  // async create(item) {
-  //   // Execute the SQL INSERT query to add a new item to the "item" table
-  //   const [result] = await this.database.query(
-  //     `insert into ${this.table} (title) values (?)`,
-  //     [item.title]
-  //   );
+  async create(word) {
+    const [result] = await this.database.query(
+      `INSERT INTO ${this.table} (word,type) VALUE (?,?)`,
+      [word.word, word.type]
+    );
 
-  //   // Return the ID of the newly inserted item
-  //   return result.insertId;
-  // }
+    return result.insertId;
+  }
 
   // // The Rs of CRUD - Read operations
 

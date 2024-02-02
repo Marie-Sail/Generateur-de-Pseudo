@@ -16,6 +16,8 @@ router.get("/word", wordControllers.browse);
 router.get("/word/subject", wordControllers.readSub);
 router.get("/word/adjective", wordControllers.readAdj);
 
+router.post("/add/word", wordControllers.add);
+
 // Route to get a specific item by ID
 // router.get("/items/:id", itemControllers.read);
 
