@@ -31,6 +31,7 @@ function Generator({ subjects, adjectives }) {
 
   return (
     <article className="generator">
+      <Patatas className="patatasss" />
       <section className="g__pseu">
         <h1 className="g__title">Génère ton pseudo :</h1>
 
@@ -77,19 +78,8 @@ function Generator({ subjects, adjectives }) {
             />
           </button>
         )}
-        {/* <button
-            className="g__pseudo__alea"
-            type="button"
-            onClick={randomPseudo}
-          >
-            <img
-              className="g__pseudo__alea__img"
-              src={`${import.meta.env.VITE_BACKEND_URL}/assets/images/alea.svg`}
-              alt="générer un pseudo"
-            />
-          </button> */}
       </section>
-      <Patatas className="patatasss" />
+      {/* <Patatas className="patatasss" /> */}
       {list.length !== 0 ? (
         <>
           <ul className="g__list">
