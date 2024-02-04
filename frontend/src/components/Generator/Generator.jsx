@@ -66,20 +66,33 @@ function Generator({ subjects, adjectives }) {
             </button>
           </div>
         ) : (
-          <button
-            className="g__pseudo__alea1"
-            type="button"
-            onClick={randomPseudo}
-          >
-            <img
-              className="g__pseudo__alea__img"
-              src={`${import.meta.env.VITE_BACKEND_URL}/assets/images/alea.svg`}
-              alt="générer un pseudo"
-            />
-          </button>
+          <div className="g__pseudo">
+            <p className="g__pseudo__new" />
+            <button className="g__pseudo__add" type="button">
+              <img
+                className="g__pseudo__add__img"
+                src={`${
+                  import.meta.env.VITE_BACKEND_URL
+                }/assets/images/grayAdd.svg`}
+                alt="ajoute à la liste"
+              />
+            </button>
+            <button
+              className="g__pseudo__alea"
+              type="button"
+              onClick={randomPseudo}
+            >
+              <img
+                className="g__pseudo__alea__img"
+                src={`${
+                  import.meta.env.VITE_BACKEND_URL
+                }/assets/images/alea.svg`}
+                alt="générer un pseudo"
+              />
+            </button>
+          </div>
         )}
       </section>
-      {/* <Patatas className="patatasss" /> */}
       {list.length !== 0 ? (
         <>
           <ul className="g__list">
